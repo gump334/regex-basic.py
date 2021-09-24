@@ -1,3 +1,5 @@
+import re
+
 def isPhoneNumber(text):
     if len(text) != 12:
         return False # not phone number-size
@@ -26,6 +28,11 @@ for i in range(len(message)):
 if not foundNumber:
     print("could not find any phone numbers. ")  
 print("Done")
+
+# Simplified with regex
+phoneNumberRegex = re.compile(r"\d\d\d-\d\d\d-\d\d\d\d")
+#mo = phoneNumberRegex.search(message)
+print(phoneNumberRegex.findall("call me 444-254-5454 tomorrow or at 334-450-8000"))
 
 #print("Is 415-555-4242 a phone number?")
 #print(isPhoneNumber("415-555-4242"))
