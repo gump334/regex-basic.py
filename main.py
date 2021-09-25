@@ -30,12 +30,12 @@ if not foundNumber:
 print("Done")
 
 # Simplified with regex
-phoneNumberRegex = re.compile(r"\d\d\d-\d\d\d-\d\d\d\d")
-#mo = phoneNumberRegex.search(message)
+phoneNumberRegex = re.compile(r'\(\d\d\d\) \d\d\d-\d\d\d\d')
+mo = phoneNumberRegex.search("My number is (334) 450-0000")
 print(phoneNumberRegex.findall("call me 444-254-5454 tomorrow or at 334-450-8000"))
+print(mo.group()) #grabbing sections of your search pattern
 
-#print("Is 415-555-4242 a phone number?")
-#print(isPhoneNumber("415-555-4242"))
-#print("is Moshi moshi a phone number?")
-#print(isPhoneNumber("Moshi mosh"))
-#test
+
+batRegex = re.compile(r"Bat(man|mobile|copter|bat)")
+mo = batRegex.search("Batmobile lost a wheel then Batman need to get to the Batcopter")
+print(mo.group())
